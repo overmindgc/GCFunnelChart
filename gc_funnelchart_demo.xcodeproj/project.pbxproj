@@ -13,6 +13,11 @@
 		B71FE2D11E61762700A629A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B71FE2CF1E61762700A629A9 /* Main.storyboard */; };
 		B71FE2D31E61762700A629A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B71FE2D21E61762700A629A9 /* Assets.xcassets */; };
 		B71FE2D61E61762700A629A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B71FE2D41E61762700A629A9 /* LaunchScreen.storyboard */; };
+		B71FE2E01E61768500A629A9 /* GCFunnelChart.m in Sources */ = {isa = PBXBuildFile; fileRef = B71FE2DF1E61768500A629A9 /* GCFunnelChart.m */; };
+		B71FE2E61E6176E700A629A9 /* GCFunnelChartLegend.m in Sources */ = {isa = PBXBuildFile; fileRef = B71FE2E51E6176E700A629A9 /* GCFunnelChartLegend.m */; };
+		B71FE2E91E61771600A629A9 /* GCChartModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B71FE2E81E61771600A629A9 /* GCChartModel.m */; };
+		B71FE2EC1E61779600A629A9 /* GCFunnelSlices.m in Sources */ = {isa = PBXBuildFile; fileRef = B71FE2EB1E61779600A629A9 /* GCFunnelSlices.m */; };
+		B71FE2EF1E61781200A629A9 /* GCFunnelColorPool.m in Sources */ = {isa = PBXBuildFile; fileRef = B71FE2EE1E61781200A629A9 /* GCFunnelColorPool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,16 @@
 		B71FE2D21E61762700A629A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B71FE2D51E61762700A629A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B71FE2D71E61762700A629A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B71FE2DE1E61768500A629A9 /* GCFunnelChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCFunnelChart.h; sourceTree = "<group>"; };
+		B71FE2DF1E61768500A629A9 /* GCFunnelChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCFunnelChart.m; sourceTree = "<group>"; };
+		B71FE2E41E6176E700A629A9 /* GCFunnelChartLegend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCFunnelChartLegend.h; sourceTree = "<group>"; };
+		B71FE2E51E6176E700A629A9 /* GCFunnelChartLegend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCFunnelChartLegend.m; sourceTree = "<group>"; };
+		B71FE2E71E61771600A629A9 /* GCChartModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCChartModel.h; sourceTree = "<group>"; };
+		B71FE2E81E61771600A629A9 /* GCChartModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCChartModel.m; sourceTree = "<group>"; };
+		B71FE2EA1E61779600A629A9 /* GCFunnelSlices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCFunnelSlices.h; sourceTree = "<group>"; };
+		B71FE2EB1E61779600A629A9 /* GCFunnelSlices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCFunnelSlices.m; sourceTree = "<group>"; };
+		B71FE2ED1E61781200A629A9 /* GCFunnelColorPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCFunnelColorPool.h; sourceTree = "<group>"; };
+		B71FE2EE1E61781200A629A9 /* GCFunnelColorPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCFunnelColorPool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +73,7 @@
 		B71FE2C51E61762700A629A9 /* gc_funnelchart_demo */ = {
 			isa = PBXGroup;
 			children = (
+				B71FE2DD1E61764A00A629A9 /* GCFunnelChart */,
 				B71FE2C91E61762700A629A9 /* AppDelegate.h */,
 				B71FE2CA1E61762700A629A9 /* AppDelegate.m */,
 				B71FE2CC1E61762700A629A9 /* ViewController.h */,
@@ -77,6 +93,23 @@
 				B71FE2C71E61762700A629A9 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B71FE2DD1E61764A00A629A9 /* GCFunnelChart */ = {
+			isa = PBXGroup;
+			children = (
+				B71FE2DE1E61768500A629A9 /* GCFunnelChart.h */,
+				B71FE2DF1E61768500A629A9 /* GCFunnelChart.m */,
+				B71FE2EA1E61779600A629A9 /* GCFunnelSlices.h */,
+				B71FE2EB1E61779600A629A9 /* GCFunnelSlices.m */,
+				B71FE2E41E6176E700A629A9 /* GCFunnelChartLegend.h */,
+				B71FE2E51E6176E700A629A9 /* GCFunnelChartLegend.m */,
+				B71FE2E71E61771600A629A9 /* GCChartModel.h */,
+				B71FE2E81E61771600A629A9 /* GCChartModel.m */,
+				B71FE2ED1E61781200A629A9 /* GCFunnelColorPool.h */,
+				B71FE2EE1E61781200A629A9 /* GCFunnelColorPool.m */,
+			);
+			path = GCFunnelChart;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,6 +143,7 @@
 				TargetAttributes = {
 					B71FE2C21E61762700A629A9 = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = F3GJU4GM83;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -150,8 +184,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B71FE2E91E61771600A629A9 /* GCChartModel.m in Sources */,
+				B71FE2EF1E61781200A629A9 /* GCFunnelColorPool.m in Sources */,
 				B71FE2CE1E61762700A629A9 /* ViewController.m in Sources */,
 				B71FE2CB1E61762700A629A9 /* AppDelegate.m in Sources */,
+				B71FE2EC1E61779600A629A9 /* GCFunnelSlices.m in Sources */,
+				B71FE2E61E6176E700A629A9 /* GCFunnelChartLegend.m in Sources */,
+				B71FE2E01E61768500A629A9 /* GCFunnelChart.m in Sources */,
 				B71FE2C81E61762700A629A9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,7 +309,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = F3GJU4GM83;
 				INFOPLIST_FILE = gc_funnelchart_demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ctgtmo.com.gc-funnelchart-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -281,7 +322,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = F3GJU4GM83;
 				INFOPLIST_FILE = gc_funnelchart_demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ctgtmo.com.gc-funnelchart-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";

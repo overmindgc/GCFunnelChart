@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@class GCChartModel;
 
 @interface GCFunnelSlices : UIButton
+
+@property (nonatomic, strong) GCChartModel *currModel;
+
+- (id)initWithFrame:(CGRect)frame ladderTopWidth:(CGFloat)topW ladderBottomWidth:(CGFloat)bottomW color:(UIColor *)color;
 
 @end

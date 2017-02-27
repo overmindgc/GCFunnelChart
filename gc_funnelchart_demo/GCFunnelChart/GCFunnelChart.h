@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GCChartModel.h"
 
 @interface GCFunnelChart : UIView
+
+- (id)initWithFrame:(CGRect)frame chartModelArray:(NSArray<GCChartModel*> *)dataArray showLegend:(BOOL)showLegend;
 
 @end

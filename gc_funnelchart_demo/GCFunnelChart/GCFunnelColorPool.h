@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface GCFunnelColorPool : NSObject
+
++ (UIColor *)colorFromPool;
+
++ (UIColor *)colorFromBottomPool;
 
 @end

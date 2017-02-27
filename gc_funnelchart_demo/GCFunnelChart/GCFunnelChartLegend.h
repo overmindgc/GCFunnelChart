@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@class GCChartModel;
 
 @interface GCFunnelChartLegend : UIButton
+
+@property (nonatomic, strong) GCChartModel *currModel;
+
+- (id)initWithFrame:(CGRect)frame color:(UIColor *)color;
 
 @end

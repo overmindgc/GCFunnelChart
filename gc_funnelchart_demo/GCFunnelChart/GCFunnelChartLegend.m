@@ -10,12 +10,40 @@
 
 @implementation GCFunnelChartLegend
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (id)initWithFrame:(CGRect)frame color:(UIColor *)color
+{
+    if (self == [super initWithFrame:frame]) {
+        self.backgroundColor = color;
+        self.titleLabel.font = [UIFont systemFontOfSize:14];
+        [self setTitleColor:[UIColor darkTextColor] forState:UIControlStateNormal];
+        self.layer.cornerRadius = 3.f;
+        self.layer.borderColor = [UIColor darkGrayColor].CGColor;
+        
+        self.layer.shadowColor = [UIColor darkGrayColor].CGColor;//shadowColor阴影颜色
+        self.layer.shadowOpacity = 1;//阴影透明度，默认0
+        self.layer.shadowRadius = 2;//阴影半径，默认3
+        self.layer.shadowOffset = CGSizeMake(2,2);//shadowOffset阴影偏移，默认(0, -3),这个跟shadowRadius配合使用
+    }
+    return self;
 }
-*/
+
+- (void)setSelected:(BOOL)selected
+{
+    [super setSelected:selected];
+    [self changeButtonStyle];
+}
+
+- (void)changeButtonStyle
+{
+    if (self.isSelected) {
+        self.layer.shadowOpacity = 0.f;
+//        self.layer.borderWidth = 1.f;
+        [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    } else {
+        self.layer.shadowOpacity = 1.f;
+//        self.layer.borderWidth = 0.f;
+        [self setTitleColor:[UIColor darkTextColor] forState:UIControlStateNormal];
+    }
+}
 
 @end

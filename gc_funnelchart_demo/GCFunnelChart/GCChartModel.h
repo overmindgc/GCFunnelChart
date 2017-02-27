@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface GCChartModel : NSObject
+
+@property (nonatomic) CGFloat value;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, strong) UIColor *color;
+@property (nonatomic) BOOL isBottom;
 
 @end
