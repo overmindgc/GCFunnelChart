@@ -11,6 +11,9 @@
 #import "GCFunnelChart/GCChartModel.h"
 
 @interface ViewController ()
+{
+    GCFunnelChart *chartView;
+}
 
 @end
 
@@ -51,10 +54,29 @@
 //    model6.isBottom = YES;
 //    [dataArray addObject:model6];
     
+    _resultLabel = [[UILabel alloc] init];
+    _resultLabel.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:_resultLabel];
+    
     CGFloat screenWidth = [[UIScreen mainScreen] bounds].size.width;
-    GCFunnelChart *chartView = [[GCFunnelChart alloc] initWithFrame:CGRectMake(20, 100, screenWidth - 40, 250) chartModelArray:dataArray showLegend:YES];
-//    chartView.layer.borderWidth = 1.f;
+    chartView = [[GCFunnelChart alloc] initWithFrame:CGRectMake(20, 100, screenWidth - 40, 250)
+                                     chartModelArray:dataArray
+                                          showLegend:YES];
+    __weak __typeof(self)weakSelf = self;
+    chartView.sliceSelectedBlock = ^(NSInteger idx,GCChartModel *model){
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
+        strongSelf.resultLabel.text = [NSString stringWithFormat:@"选中了第%ld个，%@",idx+1,model.name];
+    };
     [self.view addSubview:chartView];
+    [chartView selectSliceWithIndex:0];
+    
+    _resultLabel.frame = CGRectMake(screenWidth/2 - 200/2, chartView.frame.origin.y + chartView.frame.size.height + 40, 200, 30);
+    
+    UIButton *changeBtn = [[UIButton alloc] initWithFrame:CGRectMake(screenWidth/2 - 80/2, chartView.frame.origin.y + chartView.frame.size.height + 100, 80, 30)];
+    [changeBtn setTitle:@"随机数据" forState:UIControlStateNormal];
+    [changeBtn addTarget:self action:@selector(changeData) forControlEvents:UIControlEventTouchUpInside];
+    [changeBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    [self.view addSubview:changeBtn];
 }
 
 
@@ -63,5 +85,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)changeData
+{
+    _resultLabel.text = @"";
+    NSMutableArray *dataArray = [NSMutableArray array];
+    NSInteger num = 5;
+    for (NSInteger i=0; i<num; i++) {
+        NSInteger value = arc4random() % 100;
+        GCChartModel *model = [[GCChartModel alloc] init];
+        model.value = value;
+        model.name = [NSString stringWithFormat:@"%ld%%",(long)value];
+        if (i == num-1) {
+            model.isBottom = YES;
+        }
+        [dataArray addObject:model];
+    }
+    [chartView reloadChartWithDataSource:dataArray];
+}
 
 @end

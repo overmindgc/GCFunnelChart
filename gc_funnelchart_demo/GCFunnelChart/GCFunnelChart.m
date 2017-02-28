@@ -13,6 +13,8 @@
 
 static const CGFloat bottomPercent = 0.2;
 static const CGFloat verticalGap = 1.5;
+static const CGFloat legendHeight = 25.f;
+static const CGFloat legendLineGap = 10.f;
 
 @implementation GCFunnelChart
 {
@@ -47,8 +49,6 @@ static const CGFloat verticalGap = 1.5;
     CGFloat legendPerSpace = self.frame.size.width / legendLineNum;
     CGFloat legendWidth = legendPerSpace * 0.7;
     CGFloat legendGap = (self.frame.size.width - legendWidth * legendLineNum) / (legendLineNum - 1);
-    CGFloat legendHeight = legendPerSpace * 0.4;
-    CGFloat legendLineGap = 10.f;
     
     CGFloat dataCount = _dataArray.count;
     NSInteger lineCount = ceilf(dataCount / (CGFloat)legendLineNum);
@@ -136,31 +136,46 @@ static const CGFloat verticalGap = 1.5;
     }
 }
 
+- (void)reloadChartWithDataSource:(NSArray *)newDataArray
+{   
+    if (newDataArray && newDataArray.count > 0) {
+        _dataArray = newDataArray;
+        for (GCFunnelSlices *slicesView in slicesArray) {
+            [slicesView removeFromSuperview];
+        }
+        [slicesArray removeAllObjects];
+        for (GCFunnelChartLegend *legendView in legendViewArray) {
+            [legendView removeFromSuperview];
+        }
+        [legendViewArray removeAllObjects];
+        [self initFunnelSlices];
+    }
+}
+
 - (void)slicesClicked:(id)sender
 {
     GCFunnelSlices *selectView = (GCFunnelSlices *)sender;
-    for (GCFunnelSlices *slicesView in slicesArray) {
-        if (slicesView == sender) {
-            [slicesView setSelected:YES];
-        } else {
-            [slicesView setSelected:NO];
-        }
-    }
-    
-    for (GCFunnelSlices *legendView in legendViewArray) {
-        if (legendView.currModel == selectView.currModel) {
-            [legendView setSelected:YES];
-        } else {
-            [legendView setSelected:NO];
-        }
-    }
+    NSInteger selectIndex = [_dataArray indexOfObject:selectView.currModel];
+    [self selectSliceWithIndex:selectIndex];
 }
 
 - (void)legendClicked:(id)sender
 {
     GCFunnelChartLegend *selectView = (GCFunnelChartLegend *)sender;
+    NSInteger selectIndex = [_dataArray indexOfObject:selectView.currModel];
+    [self selectSliceWithIndex:selectIndex];
+}
+
+- (void)selectSliceWithIndex:(NSInteger)index
+{
+    if (index > _dataArray.count - 1) {
+        return;
+    }
+    
+    GCChartModel *selectedModel = [_dataArray objectAtIndex:index];
+    
     for (GCFunnelSlices *legendView in legendViewArray) {
-        if (legendView == sender) {
+        if (legendView.currModel == selectedModel) {
             [legendView setSelected:YES];
         } else {
             [legendView setSelected:NO];
@@ -168,11 +183,15 @@ static const CGFloat verticalGap = 1.5;
     }
     
     for (GCFunnelSlices *slicesView in slicesArray) {
-        if (slicesView.currModel == selectView.currModel) {
+        if (slicesView.currModel == selectedModel) {
             [slicesView setSelected:YES];
         } else {
             [slicesView setSelected:NO];
         }
+    }
+    
+    if (_sliceSelectedBlock) {
+        _sliceSelectedBlock(index,selectedModel);
     }
 }
 
