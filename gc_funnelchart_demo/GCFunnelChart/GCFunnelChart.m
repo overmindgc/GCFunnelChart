@@ -47,7 +47,7 @@ static const CGFloat legendLineGap = 10.f;
     //计算图例内容大小
     NSInteger legendLineNum = 5;
     CGFloat legendPerSpace = self.frame.size.width / legendLineNum;
-    CGFloat legendWidth = legendPerSpace * 0.7;
+    CGFloat legendWidth = legendPerSpace * 0.75;
     CGFloat legendGap = (self.frame.size.width - legendWidth * legendLineNum) / (legendLineNum - 1);
     
     CGFloat dataCount = _dataArray.count;
@@ -91,7 +91,7 @@ static const CGFloat legendLineGap = 10.f;
             ladderTopW = bottomWidth;
             ladderBottomW = bottomWidth;
         } else {
-            ladderTopW = self.frame.size.width - currValue * perValuePadding;
+            ladderTopW = self.frame.size.width - currValue * perValuePadding - 2;//减去一点误差
             currValue = currValue + model.value;
             ladderBottomW = self.frame.size.width - currValue * perValuePadding;
         }

@@ -42,9 +42,9 @@ static const CGFloat selectedExpend = 8.f;
     
     CGFloat viewWidth = self.frame.size.width;
     CGFloat viewHeight = self.frame.size.height;
-    CGFloat topStartX = viewWidth / 2 - topWidth / 2 + selectedExpend;
+    CGFloat topStartX = viewWidth / 2.f - topWidth / 2.f + selectedExpend;
     CGFloat topEndX = viewWidth - topStartX;
-    CGFloat bottomStartX = viewWidth / 2 - bottomWidth / 2 + selectedExpend;
+    CGFloat bottomStartX = viewWidth / 2.f - bottomWidth / 2.f + selectedExpend;
     CGFloat bottomEndX = viewWidth - bottomStartX;
     
     pointA = CGPointMake(topStartX, 0);
