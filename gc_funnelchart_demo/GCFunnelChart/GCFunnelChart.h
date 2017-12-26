@@ -23,6 +23,6 @@ typedef void (^FunnelSliceSelectBlock) (NSInteger idx,GCChartModel *model);
 - (void)selectSliceWithIndex:(NSInteger)index;
 
 /**点击切片和选中某一切片回调*/
-@property (nonatomic, strong) FunnelSliceSelectBlock sliceSelectedBlock;
+@property (nonatomic, copy) FunnelSliceSelectBlock sliceSelectedBlock;
 
 @end
