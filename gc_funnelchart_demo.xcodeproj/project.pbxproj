@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C261D2D1FF8C1FE00B875BB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6C261D2C1FF8C1FE00B875BB /* README.md */; };
 		B71FE2C81E61762700A629A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B71FE2C71E61762700A629A9 /* main.m */; };
 		B71FE2CB1E61762700A629A9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B71FE2CA1E61762700A629A9 /* AppDelegate.m */; };
 		B71FE2CE1E61762700A629A9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B71FE2CD1E61762700A629A9 /* ViewController.m */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6C261D2C1FF8C1FE00B875BB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		B71FE2C31E61762700A629A9 /* gc_funnelchart_demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gc_funnelchart_demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B71FE2C71E61762700A629A9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B71FE2C91E61762700A629A9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				B71FE2D21E61762700A629A9 /* Assets.xcassets */,
 				B71FE2D41E61762700A629A9 /* LaunchScreen.storyboard */,
 				B71FE2D71E61762700A629A9 /* Info.plist */,
+				6C261D2C1FF8C1FE00B875BB /* README.md */,
 				B71FE2C61E61762700A629A9 /* Supporting Files */,
 			);
 			path = gc_funnelchart_demo;
@@ -173,6 +176,7 @@
 			files = (
 				B71FE2D61E61762700A629A9 /* LaunchScreen.storyboard in Resources */,
 				B71FE2D31E61762700A629A9 /* Assets.xcassets in Resources */,
+				6C261D2D1FF8C1FE00B875BB /* README.md in Resources */,
 				B71FE2D11E61762700A629A9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,6 +354,7 @@
 				B71FE2DC1E61762700A629A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
